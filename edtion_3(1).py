@@ -138,12 +138,12 @@ def query2():
   cols = ['Smoking', 'Alcohol use', 'Passive Smoker', 'Balanced Diet', 'Obesity','Weight Loss']
   selected_cols = st.multiselect('Select lifestyle factors', cols, default=cols)
 
- fig, ax = plt.subplots()
+   fig, ax = plt.subplots()
 
 for col in selected_cols:
-sns.countplot(x=col, data=df_filtered, ax=ax)
+    sns.countplot(x=col, data=df_filtered, ax=ax)
 
-st.pyplot(fig)
+  st.pyplot(fig)
 
   st.markdown("**Observations:**")
   if 'Smoking' in selected_cols:
