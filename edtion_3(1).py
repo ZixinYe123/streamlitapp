@@ -126,10 +126,12 @@ def query2():
   cols = ['Smoking', 'Alcohol use', 'Passive Smoker', 'Balanced Diet', 'Obesity','Weight Loss']
   selected_cols = st.multiselect('Select lifestyle factors', cols, default=cols)
 
-df_filtered = df_filtered[selected_cols].reset_index(drop=True)
-fig, ax = plt.subplots()
-heatmap = sns.heatmap(df_filtered.astype(float), annot=True, fmt="g", ax=ax)
-st.write(heatmap)
+
+
+  df_filtered = df_filtered[selected_cols].reset_index(drop=True)
+  fig, ax = plt.subplots()
+  heatmap = sns.heatmap(df_filtered.astype(float), annot=True, fmt="g", ax=ax)
+  st.write(heatmap)
 
   st.markdown("**Observations:**")
   if 'Smoking' in selected_cols:
