@@ -20,8 +20,6 @@ def intro():
 
   st.snow()
 
-  **Landing Page:** Introduces dataset and app. Provides navigation options.
-
   st.header('Welcome to the Cancer Patient Analysis App')
   st.write('This app allows you to explore and analyze data on 1000 hypothetical cancer patients. Use the sidebar to navigate between different pages.')
 
