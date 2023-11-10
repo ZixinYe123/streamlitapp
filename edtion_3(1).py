@@ -5,6 +5,10 @@ import numpy as np
 import seaborn as sns
 from urllib.error import URLError
 
+import streamlit as st
+
+img = st.image('image.jpg')
+
 # Author: Jiao Ma
 
 @st.cache_data
@@ -137,9 +141,8 @@ def query2():
   cols = ['Smoking', 'Alcohol use', 'Passive Smoker', 'Balanced Diet', 'Obesity','Weight Loss']
   selected_cols = st.multiselect('Select lifestyle factors', cols, default=cols)
 
-  fig, ax = plt.subplots()
-  for col in selected_cols:
-    sns.violinplot(x=df_filtered[col], ax=ax)
+  fig, ax = plt.subplots() 
+  heatmap = sns.heatmap(df_filtered[selected_cols].astype(float), annot=True, fmt="g", ax=ax) 
   st.pyplot(fig)
 
   st.markdown("**Observations:**")
