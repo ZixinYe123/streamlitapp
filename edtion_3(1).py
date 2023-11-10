@@ -140,7 +140,7 @@ def query2():
 
   fig, ax = plt.subplots()
   for col in selected_cols:
-  sns.violinplot(x=df_filtered[col], ax=ax)
+    sns.violinplot(x="Gender", y=col, data=df_filtered, ax=ax)
   st.pyplot(fig)
 
   st.markdown("**Observations:**")
