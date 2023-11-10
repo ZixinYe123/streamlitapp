@@ -128,7 +128,7 @@ def query2():
 
   fig, ax = plt.subplots()
   for col in selected_cols:
-      df_filtered[col].value_counts().plot.area_chart(ax=ax)
+      sns.violinplot(x = df_filtered[col], ax = ax)
   st.pyplot(fig)
 
   st.markdown("**Observations:**")
