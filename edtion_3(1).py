@@ -128,10 +128,10 @@ def query2():
 
 
 
-  df_filtered = df_filtered[selected_cols].reset_index(drop=True)
-  fig, ax = plt.subplots()
-  heatmap = sns.heatmap(df_filtered.astype(float), annot=True, fmt="g", ax=ax)
-  st.write(heatmap)
+fig, ax = plt.subplots()
+for col in selected_cols:
+  sns.violinplot(x=df_filtered[col], ax=ax)
+st.pyplot(fig)
 
   st.markdown("**Observations:**")
   if 'Smoking' in selected_cols:
