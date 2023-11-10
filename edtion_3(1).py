@@ -109,7 +109,7 @@ def query1():
 
     
 
-# Author: Zixin Ye & Zijun Fu & Jiao Ma
+# Author: Jiao Ma & Zixin Ye & Zijun Fu 
 def query2():
 
   min_age = int(df['Age'].min())
@@ -128,7 +128,7 @@ def query2():
 
   fig, ax = plt.subplots()
   for col in selected_cols:
-      df_filtered[col].value_counts().plot.bar(ax=ax)
+      df_filtered[col].value_counts().plot.area_chart(ax=ax)
   st.pyplot(fig)
 
   st.markdown("**Observations:**")
