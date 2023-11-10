@@ -5,9 +5,6 @@ import numpy as np
 import seaborn as sns
 from urllib.error import URLError
 
-import streamlit as st
-
-img = st.image('image.jpg')
 
 # Author: Jiao Ma
 
